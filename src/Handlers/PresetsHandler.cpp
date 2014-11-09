@@ -54,14 +54,20 @@ void PresetsHandler::readFromDisk() {
     }
 }
 
-int PresetsHandler::size(){
-    return presets.size();
-}
-
-ofFile PresetsHandler::at(int i){
-    return presets.at(i);
-}
-
 int PresetsHandler::currentIndex(){
     return currentPreset;
+}
+
+string PresetsHandler::report() {
+    stringstream report;
+    report << "PRESETS" << endl << endl;
+    
+    for(int i = 0; i < presets.size(); i++) {
+        report << endl << i << ": " << presets.at(i).getBaseName();
+        if(i == currentIndex()) {
+            report << " [*]";
+        }
+    }
+    
+    return report.str();
 }

@@ -11,9 +11,8 @@ public:
     void increment();
     void decrement();
     void readFromDisk();
-    int size();
-    ofFile at(int i);
     int currentIndex();
+    string report();
     
 protected:
     

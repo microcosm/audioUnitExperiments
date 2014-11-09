@@ -36,13 +36,6 @@ void ofApp::draw(){
     ofSetColor(255);
     waveform.draw();
     
-    stringstream presetText;
-    presetText << "Current: " << presets.currentIndex() << endl;
-    
-    for(int i = 0; i < presets.size(); i++) {
-        presetText << endl << i << ": " << presets.at(i).getBaseName();
-    }
-    
     stringstream controlText;
     controlText << "CONTROLS" << endl
     << endl << "LEFT/RIGHT: Switch presets"
@@ -52,7 +45,7 @@ void ofApp::draw(){
     << endl << "s:          Save preset";
     
     ofDrawBitmapString(midi.report(), 20, 34);
-    ofDrawBitmapString(presetText.str(), 500, 34);
+    ofDrawBitmapString(presets.report(), 500, 34);
     ofDrawBitmapString(controlText.str(), 20, 600);
 }
 
