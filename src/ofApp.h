@@ -5,6 +5,7 @@
 #include "ofxBpm.h"
 #include "PresetsHandler.h"
 #include "MidiHandler.h"
+#include "Controls.h"
 
 class ofApp : public ofBaseApp{
     
@@ -36,4 +37,5 @@ public:
     
     PresetsHandler presets;
     MidiHandler midi;
+    Controls controls;
 };

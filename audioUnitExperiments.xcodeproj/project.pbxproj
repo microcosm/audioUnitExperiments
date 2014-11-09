@@ -47,6 +47,7 @@
 		846DADCD1A1010E900317D00 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846DADB51A1010E900317D00 /* AudioUnit.framework */; };
 		846DADDC1A102ECC00317D00 /* MidiHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 846DADD81A102B0800317D00 /* MidiHandler.cpp */; };
 		846DADDD1A102ED200317D00 /* PresetsHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 846DADDA1A102B0800317D00 /* PresetsHandler.cpp */; };
+		846DADE01A10340E00317D00 /* Controls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 846DADDE1A10340E00317D00 /* Controls.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -179,6 +180,8 @@
 		846DADD91A102B0800317D00 /* MidiHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MidiHandler.h; sourceTree = "<group>"; };
 		846DADDA1A102B0800317D00 /* PresetsHandler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PresetsHandler.cpp; sourceTree = "<group>"; };
 		846DADDB1A102B0800317D00 /* PresetsHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresetsHandler.h; sourceTree = "<group>"; };
+		846DADDE1A10340E00317D00 /* Controls.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Controls.cpp; sourceTree = "<group>"; };
+		846DADDF1A10340E00317D00 /* Controls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controls.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -432,6 +435,8 @@
 				846DADD91A102B0800317D00 /* MidiHandler.h */,
 				846DADDA1A102B0800317D00 /* PresetsHandler.cpp */,
 				846DADDB1A102B0800317D00 /* PresetsHandler.h */,
+				846DADDE1A10340E00317D00 /* Controls.cpp */,
+				846DADDF1A10340E00317D00 /* Controls.h */,
 			);
 			path = Handlers;
 			sourceTree = "<group>";
@@ -617,6 +622,7 @@
 				846DADDC1A102ECC00317D00 /* MidiHandler.cpp in Sources */,
 				846DAD781A0FF68F00317D00 /* ofxRtMidiIn.cpp in Sources */,
 				846DADC81A1010E900317D00 /* ofxAudioUnitSpeechSynth.cpp in Sources */,
+				846DADE01A10340E00317D00 /* Controls.cpp in Sources */,
 				846DADC01A1010E900317D00 /* ofxAudioUnitMatrixMixer.cpp in Sources */,
 				846DAD7C1A0FF68F00317D00 /* ofxMidiIn.cpp in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
