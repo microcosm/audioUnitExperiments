@@ -2,36 +2,28 @@
 
 void ofApp::setup(){
     
-    //Init default MIDI values
-    midiPortId = "openFrameworksPatch";
-    playing = true;
-    channel = 1;
-    velocity = 64;
-    note = 60;
-    
-    //Init synth and preset handler
     alchemySynth = ofxAudioUnit('aumu', 'CaC2', 'CamA');
     presets.setup("alchemy", &alchemySynth);
+    midi.setup(&alchemySynth);
     
-    //Init MIDI reciever, tie it to synth
-    midiReceiver.createMidiDestination(midiPortId);
-    midiReceiver.routeMidiTo(alchemySynth);
     alchemySynth.connectTo(tap).connectTo(output);
-    
-    //Create MIDI sender
-    midiOut.openPort(midiPortId);
-    
-    //Kick off 'pull' chain
     output.start();
+    playing = true;
     
-    //Play on the beat
     ofAddListener(bpm.beatEvent, this, &ofApp::play);
     bpm.start();
 }
 
 void ofApp::play(void){
     if(playing) {
-        midiOut.sendNoteOn(channel, note, velocity);
+        midi.sendNoteOn();
+    }
+}
+
+void ofApp::togglePlaying() {
+    playing = !playing;
+    if(!playing) {
+        midi.sendNoteOff();
     }
 }
 
@@ -43,16 +35,6 @@ void ofApp::draw(){
     ofBackground(40);
     ofSetColor(255);
     waveform.draw();
-    
-    stringstream midiText;
-    midiText << "MIDI" << endl << endl
-    << "connected to port " << midiOut.getPort()
-    << " \"" << midiOut.getName() << "\"" << endl
-    << "is virtual?: " << midiOut.isVirtual() << endl << endl
-    << "sending to channel " << channel << endl << endl
-    << "current program: " << currentPgm << endl << endl
-    << "note: " << note << endl
-    << "velocity: " << velocity << endl;
     
     stringstream presetText;
     presetText << "Current: " << presets.currentIndex() << endl;
@@ -69,13 +51,13 @@ void ofApp::draw(){
     << endl << "u:          Show UI"
     << endl << "s:          Save preset";
     
-    ofDrawBitmapString(midiText.str(), 20, 34);
+    ofDrawBitmapString(midi.report(), 20, 34);
     ofDrawBitmapString(presetText.str(), 500, 34);
     ofDrawBitmapString(controlText.str(), 20, 600);
 }
 
 void ofApp::exit() {
-    midiOut.closePort();
+    midi.exit();
 }
 
 void ofApp::keyPressed(int key){
@@ -87,19 +69,19 @@ void ofApp::keyPressed(int key){
         presets.save();
         
     } else if(key == 357) {
-        incrementNote();
+        midi.incrementNote();
         
     } else if(key == 359) {
-        decrementNote();
+        midi.decrementNote();
+        
+    } else if(key == ' ') {
+        togglePlaying();
         
     } else if(key == 358) {
         presets.increment();
         
     } else if(key == 356) {
         presets.decrement();
-        
-    } else if(key == ' ') {
-        toggleNote();
     }
 }
 
@@ -114,25 +96,6 @@ void ofApp::mouseMoved(int x, int y){
                           0,
                           param,
                           0);
-}
-
-void ofApp::incrementNote() {
-    midiOut.sendNoteOff(channel, note, velocity);
-    if(note == 127) note = 0;
-    else note += 1;
-}
-
-void ofApp::decrementNote() {
-    midiOut.sendNoteOff(channel, note, velocity);
-    if(note == 0) note = 127;
-    else note -= 1;
-}
-
-void ofApp::toggleNote() {
-    playing = !playing;
-    if(!playing) {
-        midiOut.sendNoteOff(channel, note, velocity);
-    }
 }
 
 void ofApp::keyReleased(int key){}

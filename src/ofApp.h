@@ -2,16 +2,16 @@
 
 #include "ofMain.h"
 #include "ofxAudioUnit.h"
-#include "ofxAudioUnitMidi.h"
-#include "ofxMidi.h"
 #include "ofxBpm.h"
 #include "PresetsHandler.h"
+#include "MidiHandler.h"
 
 class ofApp : public ofBaseApp{
     
 public:
     void setup();
     void play();
+    void togglePlaying();
     void update();
     void draw();
     void exit();
@@ -26,24 +26,14 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
-    void incrementNote();
-    void decrementNote();
-    void toggleNote();
-    
-    
     bool playing;
     
     ofxAudioUnit alchemySynth;
     ofxAudioUnitTap tap;
     ofxAudioUnitOutput output;
-    ofxAudioUnitMidiReceiver midiReceiver;
     ofPolyline waveform;
-    ofxMidiOut midiOut;
     ofxBpm bpm;
     
     PresetsHandler presets;
-    
-    string midiPortId;
-    unsigned int currentPgm;
-    int note, channel, velocity;
+    MidiHandler midi;
 };

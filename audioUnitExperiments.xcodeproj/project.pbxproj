@@ -45,7 +45,8 @@
 		846DADCB1A1010E900317D00 /* CoreMIDI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846DADB31A1010E900317D00 /* CoreMIDI.framework */; };
 		846DADCC1A1010E900317D00 /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846DADB41A1010E900317D00 /* CoreAudioKit.framework */; };
 		846DADCD1A1010E900317D00 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846DADB51A1010E900317D00 /* AudioUnit.framework */; };
-		846DADD01A10176A00317D00 /* PresetsHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 846DADCE1A10176A00317D00 /* PresetsHandler.cpp */; };
+		846DADDC1A102ECC00317D00 /* MidiHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 846DADD81A102B0800317D00 /* MidiHandler.cpp */; };
+		846DADDD1A102ED200317D00 /* PresetsHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 846DADDA1A102B0800317D00 /* PresetsHandler.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -174,8 +175,10 @@
 		846DADB31A1010E900317D00 /* CoreMIDI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMIDI.framework; path = ../../../../../../../../../System/Library/Frameworks/CoreMIDI.framework; sourceTree = "<group>"; };
 		846DADB41A1010E900317D00 /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = ../../../../../../../../../System/Library/Frameworks/CoreAudioKit.framework; sourceTree = "<group>"; };
 		846DADB51A1010E900317D00 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = ../../../../../../../../../System/Library/Frameworks/AudioUnit.framework; sourceTree = "<group>"; };
-		846DADCE1A10176A00317D00 /* PresetsHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PresetsHandler.cpp; path = Presets/PresetsHandler.cpp; sourceTree = "<group>"; };
-		846DADCF1A10176A00317D00 /* PresetsHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PresetsHandler.h; path = Presets/PresetsHandler.h; sourceTree = "<group>"; };
+		846DADD81A102B0800317D00 /* MidiHandler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MidiHandler.cpp; sourceTree = "<group>"; };
+		846DADD91A102B0800317D00 /* MidiHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MidiHandler.h; sourceTree = "<group>"; };
+		846DADDA1A102B0800317D00 /* PresetsHandler.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PresetsHandler.cpp; sourceTree = "<group>"; };
+		846DADDB1A102B0800317D00 /* PresetsHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PresetsHandler.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -422,13 +425,15 @@
 			path = TPCircularBuffer;
 			sourceTree = "<group>";
 		};
-		846DADD11A10177000317D00 /* Presets */ = {
+		846DADD71A102B0800317D00 /* Handlers */ = {
 			isa = PBXGroup;
 			children = (
-				846DADCE1A10176A00317D00 /* PresetsHandler.cpp */,
-				846DADCF1A10176A00317D00 /* PresetsHandler.h */,
+				846DADD81A102B0800317D00 /* MidiHandler.cpp */,
+				846DADD91A102B0800317D00 /* MidiHandler.h */,
+				846DADDA1A102B0800317D00 /* PresetsHandler.cpp */,
+				846DADDB1A102B0800317D00 /* PresetsHandler.h */,
 			);
-			name = Presets;
+			path = Handlers;
 			sourceTree = "<group>";
 		};
 		BB4B014C10F69532006C3DED /* addons */ = {
@@ -504,7 +509,7 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				846DADD11A10177000317D00 /* Presets */,
+				846DADD71A102B0800317D00 /* Handlers */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
@@ -608,6 +613,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846DADDD1A102ED200317D00 /* PresetsHandler.cpp in Sources */,
+				846DADDC1A102ECC00317D00 /* MidiHandler.cpp in Sources */,
 				846DAD781A0FF68F00317D00 /* ofxRtMidiIn.cpp in Sources */,
 				846DADC81A1010E900317D00 /* ofxAudioUnitSpeechSynth.cpp in Sources */,
 				846DADC01A1010E900317D00 /* ofxAudioUnitMatrixMixer.cpp in Sources */,
@@ -624,7 +631,6 @@
 				846DADC21A1010E900317D00 /* ofxAudioUnitMixer.cpp in Sources */,
 				846DADBF1A1010E900317D00 /* ofxAudioUnitInput.cpp in Sources */,
 				846DADB71A1010E900317D00 /* CAAUParameter.cpp in Sources */,
-				846DADD01A10176A00317D00 /* PresetsHandler.cpp in Sources */,
 				846DADC91A1010E900317D00 /* ofxAudioUnitTap.cpp in Sources */,
 				846DADBB1A1010E900317D00 /* ofxAudioUnitDSPNode.cpp in Sources */,
 				846DAD411A0FF68300317D00 /* tinyxml.cpp in Sources */,
