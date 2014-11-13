@@ -6,6 +6,8 @@
 #include "PresetsHandler.h"
 #include "MidiHandler.h"
 #include "Controls.h"
+#include "ofxKinectV2OSC.h"
+#include "Renderer1.h"
 
 class ofApp : public ofBaseApp{
     
@@ -38,4 +40,10 @@ public:
     PresetsHandler presets;
     MidiHandler midi;
     Controls controls;
+    
+    ofxKinectV2OSC kinect;
+    Skeleton* skeleton;
+    vector<Skeleton>* skeletons;
+    Renderer1 renderer;
+    ofTrueTypeFont smallFont, largeFont;
 };

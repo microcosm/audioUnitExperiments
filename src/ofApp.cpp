@@ -1,6 +1,13 @@
 #include "ofApp.h"
 
 void ofApp::setup(){
+    smallFont.loadFont("selena.otf", 16); //http://openfontlibrary.org/en/font/selena
+    largeFont.loadFont("selena.otf", 48);
+    
+    kinect.setup(12345, smallFont);
+    skeletons = kinect.getSkeletons();
+    renderer.setup(skeletons);
+    
     alchemySynth = ofxAudioUnit('aumu', 'CaC2', 'CamA');
     presets.setup("alchemy", &alchemySynth);
     midi.setup(&alchemySynth);
@@ -28,6 +35,7 @@ void ofApp::togglePlaying() {
 
 void ofApp::update(){
     tap.getLeftWaveform(waveform, ofGetWidth(), ofGetHeight());
+    kinect.update();
 }
 
 void ofApp::draw(){
@@ -38,6 +46,11 @@ void ofApp::draw(){
     ofDrawBitmapString(midi.report(), 20, 34);
     ofDrawBitmapString(presets.report(), 500, 34);
     ofDrawBitmapString(controls.report(), 20, 600);
+    
+    renderer.draw();
+    
+    ofSetColor(ofColor::white);
+    largeFont.drawString("fps:\n" + ofToString(ofGetFrameRate()), 20, ofGetHeight() - 100);
 }
 
 void ofApp::exit() {
