@@ -39,17 +39,14 @@ void ofApp::update(){
 }
 
 void ofApp::draw(){
-    ofBackground(40);
-    ofSetColor(255);
+    ofSetColor(ofColor::white);
     waveform.draw();
-    
-    ofDrawBitmapString(midi.report(), 20, 34);
-    ofDrawBitmapString(presets.report(), 500, 34);
-    ofDrawBitmapString(controls.report(), 20, 600);
-    
     renderer.draw();
     
-    ofSetColor(ofColor::white);
+    ofSetColor(ofColor::black);
+    ofDrawBitmapString(midi.report(), 20, 34);
+    ofDrawBitmapString(presets.report(), 500, 34);
+    ofDrawBitmapString(controls.report(), 500, 600);
     largeFont.drawString("fps:\n" + ofToString(ofGetFrameRate()), 20, ofGetHeight() - 100);
 }
 
