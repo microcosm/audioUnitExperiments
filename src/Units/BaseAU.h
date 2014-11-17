@@ -9,7 +9,7 @@ public:
     void showUI();
     void setParameter(int param, float value);
     void setParameters(int param1, int param2, ofVec2f value);
-    ofxAudioUnit* getSynth();
+    ofxAudioUnit* get();
 protected:
-    ofxAudioUnit synth;
+    ofxAudioUnit unit;
 };

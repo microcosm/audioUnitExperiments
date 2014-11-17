@@ -10,15 +10,15 @@ void ofApp::setup(){
     renderer.setup(skeletons);
     
     alchemy.setup();
-    ofxAudioUnit* synth = alchemy.getSynth();
+    ofxAudioUnit* synth = alchemy.get();
     presets.setup("alchemy", synth);
     midi.setup(synth);
     
     filter.setup();
     reverb.setup();
     
-    synth->connectTo(*filter.getSynth())
-        .connectTo(*reverb.getSynth())
+    synth->connectTo(*filter.get())
+        .connectTo(*reverb.get())
         .connectTo(tap)
         .connectTo(output);
     
