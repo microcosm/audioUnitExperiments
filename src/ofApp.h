@@ -9,6 +9,7 @@
 #include "ofxKinectV2OSC.h"
 #include "Renderer1.h"
 #include "AlchemyPlayer.h"
+#include "LowPassFilter.h"
 
 class ofApp : public ofBaseApp{
     
@@ -33,6 +34,7 @@ public:
     bool playing;
     
     AlchemyPlayer alchemy;
+    LowPassFilter filter;
     ofxAudioUnitTap tap;
     ofxAudioUnitOutput output;
     ofPolyline waveform;
@@ -47,6 +49,4 @@ public:
     vector<Skeleton>* skeletons;
     Renderer1 renderer;
     ofTrueTypeFont smallFont, largeFont;
-    
-    ofxAudioUnit filter;
 };

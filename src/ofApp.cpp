@@ -2,8 +2,6 @@
 
 void ofApp::setup(){
     
-    filter = ofxAudioUnit(kAudioUnitType_Effect,
-                          kAudioUnitSubType_LowPassFilter);
     smallFont.loadFont("selena.otf", 16); //http://openfontlibrary.org/en/font/selena
     largeFont.loadFont("selena.otf", 48);
     
@@ -16,8 +14,8 @@ void ofApp::setup(){
     presets.setup("alchemy", synth);
     midi.setup(synth);
     
-    
-    synth->connectTo(filter).connectTo(tap).connectTo(output);
+    filter.setup();
+    synth->connectTo(*filter.getSynth()).connectTo(tap).connectTo(output);
     output.start();
     playing = false;
     
@@ -48,8 +46,9 @@ void ofApp::draw(){
     waveform.draw();
     renderer.draw();
     
-    for(int i = 0; i < skeletons->size(); i++) {
-        alchemy.setParameters(XyPad1x, XyPad1y, skeletons->at(i).getLeftHandNormal());
+    for(int i = 0; i < skeletons->size(); i++) {        
+        filter.setParameter(kLowPassParam_CutoffFrequency, ofMap(skeletons->at(i).getLeftHandNormal().y, 0, 1, 6900, 500));
+        
         alchemy.setParameter(RemixX, skeletons->at(i).getRightHandNormal().x * 0.34);
         alchemy.setParameter(RemixY, skeletons->at(i).getRightHandNormal().y);
     }

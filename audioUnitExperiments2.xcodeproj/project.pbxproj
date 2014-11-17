@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84CA8EA81A19BDFF0042222E /* LowPassFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CA8EA61A19BDFF0042222E /* LowPassFilter.cpp */; };
 		84D4AFDF1A19B1F500C0B730 /* AUParamInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84D4AFAF1A19B1F500C0B730 /* AUParamInfo.cpp */; };
 		84D4AFE01A19B1F500C0B730 /* CAAUParameter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84D4AFB11A19B1F500C0B730 /* CAAUParameter.cpp */; };
 		84D4AFE11A19B1F500C0B730 /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84D4AFB31A19B1F500C0B730 /* CADebugMacros.cpp */; };
@@ -123,6 +124,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		84CA8EA61A19BDFF0042222E /* LowPassFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LowPassFilter.cpp; sourceTree = "<group>"; };
+		84CA8EA71A19BDFF0042222E /* LowPassFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LowPassFilter.h; sourceTree = "<group>"; };
 		84D4AFAF1A19B1F500C0B730 /* AUParamInfo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AUParamInfo.cpp; sourceTree = "<group>"; };
 		84D4AFB01A19B1F500C0B730 /* AUParamInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AUParamInfo.h; sourceTree = "<group>"; };
 		84D4AFB11A19B1F500C0B730 /* CAAUParameter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CAAUParameter.cpp; sourceTree = "<group>"; };
@@ -687,6 +690,8 @@
 			children = (
 				84D4B0A81A19B2ED00C0B730 /* AlchemyPlayer.cpp */,
 				84D4B0A91A19B2ED00C0B730 /* AlchemyPlayer.h */,
+				84CA8EA61A19BDFF0042222E /* LowPassFilter.cpp */,
+				84CA8EA71A19BDFF0042222E /* LowPassFilter.h */,
 			);
 			path = Synths;
 			sourceTree = "<group>";
@@ -899,6 +904,7 @@
 				84D4AFEC1A19B1F500C0B730 /* ofxAudioUnitNetReceive.cpp in Sources */,
 				84D4B0AC1A19B2ED00C0B730 /* PresetsHandler.cpp in Sources */,
 				84D4B0861A19B26600C0B730 /* ofxMidi.cpp in Sources */,
+				84CA8EA81A19BDFF0042222E /* LowPassFilter.cpp in Sources */,
 				84D4AFED1A19B1F500C0B730 /* ofxAudioUnitNetSend.cpp in Sources */,
 				84D4B04B1A19B25C00C0B730 /* OscOutboundPacketStream.cpp in Sources */,
 				84D4B0531A19B26100C0B730 /* ofxBpm.cpp in Sources */,
