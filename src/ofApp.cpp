@@ -14,7 +14,7 @@ void ofApp::setup(){
     
     alchemySynth.connectTo(tap).connectTo(output);
     output.start();
-    playing = true;
+    playing = false;
     
     ofAddListener(bpm.beatEvent, this, &ofApp::play);
     bpm.start();
@@ -33,6 +33,11 @@ void ofApp::togglePlaying() {
     }
 }
 
+const int XyPad1x = 8;
+const int XyPad1y = 9;
+const int XyPad2x = 10;
+const int XyPad2y = 11;
+
 void ofApp::update(){
     tap.getLeftWaveform(waveform, ofGetWidth(), ofGetHeight());
     kinect.update();
@@ -42,6 +47,21 @@ void ofApp::draw(){
     ofSetColor(ofColor::white);
     waveform.draw();
     renderer.draw();
+    
+    
+    
+    
+    for(int i = 0; i < skeletons->size(); i++) {
+        
+        ofVec2f leftHand = skeletons->at(i).getLeftHandNormal();
+        ofVec2f rightHand = skeletons->at(i).getRightHandNormal();
+        AudioUnitSetParameter(alchemySynth.getUnit(), XyPad1x, kAudioUnitScope_Global, 0, leftHand.x, 0);
+        AudioUnitSetParameter(alchemySynth.getUnit(), XyPad1y, kAudioUnitScope_Global, 0, leftHand.y, 0);
+        AudioUnitSetParameter(alchemySynth.getUnit(), XyPad2x, kAudioUnitScope_Global, 0, rightHand.x, 0);
+        AudioUnitSetParameter(alchemySynth.getUnit(), XyPad2y, kAudioUnitScope_Global, 0, rightHand.y, 0);
+    }
+    
+    
     
     ofSetColor(ofColor::black);
     ofDrawBitmapString(midi.report(), 20, 34);
@@ -72,19 +92,7 @@ void ofApp::keyPressed(int key){
     }
 }
 
-void ofApp::mouseMoved(int x, int y){
-    
-    //set parameter based on mouse
-    float param = ofMap(x, 0, ofGetWidth(), 0, 1, true);
-    
-    AudioUnitSetParameter(alchemySynth.getUnit(),
-                          0, //index of the parameter - see param list
-                          kAudioUnitScope_Global,
-                          0,
-                          param,
-                          0);
-}
-
+void ofApp::mouseMoved(int x, int y){}
 void ofApp::keyReleased(int key){}
 void ofApp::mouseDragged(int x, int y, int button){}
 void ofApp::mousePressed(int x, int y, int button){}
