@@ -8,11 +8,12 @@ void ofApp::setup(){
     skeletons = kinect.getSkeletons();
     renderer.setup(skeletons);
     
-    alchemySynth = ofxAudioUnit('aumu', 'CaC2', 'CamA');
-    presets.setup("alchemy", &alchemySynth);
-    midi.setup(&alchemySynth);
+    alchemy.setup();
+    ofxAudioUnit* synth = alchemy.getSynth();
+    presets.setup("alchemy", synth);
+    midi.setup(synth);
     
-    alchemySynth.connectTo(tap).connectTo(output);
+    synth->connectTo(tap).connectTo(output);
     output.start();
     playing = false;
     
@@ -44,13 +45,8 @@ void ofApp::draw(){
     renderer.draw();
     
     for(int i = 0; i < skeletons->size(); i++) {
-        
-        ofVec2f leftHand = skeletons->at(i).getLeftHandNormal();
-        ofVec2f rightHand = skeletons->at(i).getRightHandNormal();
-        AudioUnitSetParameter(alchemySynth.getUnit(), AlchemyPlayer::XyPad1x, kAudioUnitScope_Global, 0, leftHand.x, 0);
-        AudioUnitSetParameter(alchemySynth.getUnit(), AlchemyPlayer::XyPad1y, kAudioUnitScope_Global, 0, leftHand.y, 0);
-        AudioUnitSetParameter(alchemySynth.getUnit(), AlchemyPlayer::XyPad2x, kAudioUnitScope_Global, 0, rightHand.x, 0);
-        AudioUnitSetParameter(alchemySynth.getUnit(), AlchemyPlayer::XyPad2y, kAudioUnitScope_Global, 0, rightHand.y, 0);
+        alchemy.setParameters(XyPad1x, XyPad1y, skeletons->at(i).getLeftHandNormal());
+        alchemy.setParameters(XyPad2x, XyPad2y, skeletons->at(i).getRightHandNormal());
     }
     
     ofSetColor(ofColor::black);
@@ -66,7 +62,7 @@ void ofApp::exit() {
 
 void ofApp::keyPressed(int key){
     if (key == 'u') {
-        alchemySynth.showUI();
+        alchemy.showUI();
     } else if(key == 's') {
         presets.save();
     } else if(key == 357) {

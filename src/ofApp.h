@@ -32,7 +32,7 @@ public:
     
     bool playing;
     
-    ofxAudioUnit alchemySynth;
+    AlchemyPlayer alchemy;
     ofxAudioUnitTap tap;
     ofxAudioUnitOutput output;
     ofPolyline waveform;
