@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0600"
+   LastUpgradeVersion = "0460"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-               BuildableName = "audioUnitExperiments.app"
-               BlueprintName = "audioUnitExperiments2"
-               ReferencedContainer = "container:audioUnitExperiments2.xcodeproj">
+               BuildableName = "audioUnitExperiments3.app"
+               BlueprintName = "audioUnitExperiments3"
+               ReferencedContainer = "container:audioUnitExperiments3.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "audioUnitExperiments.app"
-            BlueprintName = "audioUnitExperiments2"
-            ReferencedContainer = "container:audioUnitExperiments2.xcodeproj">
+            BuildableName = "audioUnitExperiments3.app"
+            BlueprintName = "audioUnitExperiments3"
+            ReferencedContainer = "container:audioUnitExperiments3.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -52,9 +52,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "audioUnitExperiments.app"
-            BlueprintName = "audioUnitExperiments2"
-            ReferencedContainer = "container:audioUnitExperiments2.xcodeproj">
+            BuildableName = "audioUnitExperiments3.app"
+            BlueprintName = "audioUnitExperiments3"
+            ReferencedContainer = "container:audioUnitExperiments3.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -64,15 +64,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       debugDocumentVersioning = "YES">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E4B69B5A0A3A1756003C02F2"
-            BuildableName = "audioUnitExperiments.app"
-            BlueprintName = "audioUnitExperiments2"
-            ReferencedContainer = "container:audioUnitExperiments2.xcodeproj">
+            BuildableName = "audioUnitExperiments3.app"
+            BlueprintName = "audioUnitExperiments3"
+            ReferencedContainer = "container:audioUnitExperiments3.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -80,7 +80,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
