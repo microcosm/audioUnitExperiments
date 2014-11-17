@@ -10,6 +10,7 @@
 #include "Renderer1.h"
 #include "AlchemyPlayer.h"
 #include "LowPassFilter.h"
+#include "Reverb.h"
 
 class ofApp : public ofBaseApp{
     
@@ -35,6 +36,7 @@ public:
     
     AlchemyPlayer alchemy;
     LowPassFilter filter;
+    Reverb reverb;
     ofxAudioUnitTap tap;
     ofxAudioUnitOutput output;
     ofPolyline waveform;

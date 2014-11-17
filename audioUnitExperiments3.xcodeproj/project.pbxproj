@@ -71,6 +71,7 @@
 		84CA8FCD1A19C5B90042222E /* AlchemyPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CA8FC11A19C5B90042222E /* AlchemyPlayer.cpp */; };
 		84CA8FCE1A19C5B90042222E /* BaseAU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CA8FC31A19C5B90042222E /* BaseAU.cpp */; };
 		84CA8FCF1A19C5B90042222E /* LowPassFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CA8FC51A19C5B90042222E /* LowPassFilter.cpp */; };
+		84CA8FD21A19C65A0042222E /* Reverb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CA8FD01A19C65A0042222E /* Reverb.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -241,7 +242,6 @@
 		84CA8FA31A19C55B0042222E /* OscReceivedElements.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OscReceivedElements.h; sourceTree = "<group>"; };
 		84CA8FA41A19C55B0042222E /* OscTypes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OscTypes.cpp; sourceTree = "<group>"; };
 		84CA8FA51A19C55B0042222E /* OscTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OscTypes.h; sourceTree = "<group>"; };
-		84CA8FB21A19C5B90042222E /* .DS_Store */ = {isa = PBXFileReference; lastKnownFileType = file; path = .DS_Store; sourceTree = "<group>"; };
 		84CA8FB41A19C5B90042222E /* Controls.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Controls.cpp; sourceTree = "<group>"; };
 		84CA8FB51A19C5B90042222E /* Controls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controls.h; sourceTree = "<group>"; };
 		84CA8FB61A19C5B90042222E /* MidiHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MidiHandler.cpp; sourceTree = "<group>"; };
@@ -259,6 +259,8 @@
 		84CA8FC41A19C5B90042222E /* BaseAU.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseAU.h; sourceTree = "<group>"; };
 		84CA8FC51A19C5B90042222E /* LowPassFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LowPassFilter.cpp; sourceTree = "<group>"; };
 		84CA8FC61A19C5B90042222E /* LowPassFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LowPassFilter.h; sourceTree = "<group>"; };
+		84CA8FD01A19C65A0042222E /* Reverb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Reverb.cpp; sourceTree = "<group>"; };
+		84CA8FD11A19C65A0042222E /* Reverb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reverb.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -657,6 +659,8 @@
 				84CA8FC41A19C5B90042222E /* BaseAU.h */,
 				84CA8FC51A19C5B90042222E /* LowPassFilter.cpp */,
 				84CA8FC61A19C5B90042222E /* LowPassFilter.h */,
+				84CA8FD01A19C65A0042222E /* Reverb.cpp */,
+				84CA8FD11A19C65A0042222E /* Reverb.h */,
 			);
 			path = Units;
 			sourceTree = "<group>";
@@ -735,7 +739,6 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				84CA8FB21A19C5B90042222E /* .DS_Store */,
 				84CA8FB31A19C5B90042222E /* Handlers */,
 				84CA8FBA1A19C5B90042222E /* main.cpp */,
 				84CA8FBB1A19C5B90042222E /* ofApp.cpp */,
@@ -853,6 +856,7 @@
 				84CA8FB01A19C55B0042222E /* OscReceivedElements.cpp in Sources */,
 				84CA8FCF1A19C5B90042222E /* LowPassFilter.cpp in Sources */,
 				84CA8F091A19C54C0042222E /* ofxAudioUnit.cpp in Sources */,
+				84CA8FD21A19C65A0042222E /* Reverb.cpp in Sources */,
 				84CA8FAB1A19C55B0042222E /* IpEndpointName.cpp in Sources */,
 				84CA8F191A19C54C0042222E /* ofxAudioUnitTap.cpp in Sources */,
 				84CA8FAE1A19C55B0042222E /* OscOutboundPacketStream.cpp in Sources */,

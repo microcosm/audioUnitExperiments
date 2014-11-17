@@ -15,7 +15,13 @@ void ofApp::setup(){
     midi.setup(synth);
     
     filter.setup();
-    synth->connectTo(*filter.getSynth()).connectTo(tap).connectTo(output);
+    reverb.setup();
+    
+    synth->connectTo(*filter.getSynth())
+        .connectTo(*reverb.getSynth())
+        .connectTo(tap)
+        .connectTo(output);
+    
     output.start();
     playing = false;
     
@@ -46,7 +52,8 @@ void ofApp::draw(){
     waveform.draw();
     renderer.draw();
     
-    for(int i = 0; i < skeletons->size(); i++) {        
+    for(int i = 0; i < skeletons->size(); i++) {
+        reverb.setParameter(kReverbParam_DryWetMix, ofMap(skeletons->at(i).getLeftHandNormal().x, 0, 1, 0, 50));
         filter.setParameter(kLowPassParam_CutoffFrequency, ofMap(skeletons->at(i).getLeftHandNormal().y, 0, 1, 6900, 500));
         
         alchemy.setParameter(RemixX, skeletons->at(i).getRightHandNormal().x * 0.34);
@@ -67,6 +74,8 @@ void ofApp::exit() {
 void ofApp::keyPressed(int key){
     if (key == 'u') {
         alchemy.showUI();
+    } else if(key == 'r') {
+        reverb.showUI();
     } else if(key == 'f') {
         filter.showUI();
     } else if(key == 's') {
