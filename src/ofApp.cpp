@@ -1,6 +1,9 @@
 #include "ofApp.h"
 
 void ofApp::setup(){
+    
+    filter = ofxAudioUnit(kAudioUnitType_Effect,
+                          kAudioUnitSubType_LowPassFilter);
     smallFont.loadFont("selena.otf", 16); //http://openfontlibrary.org/en/font/selena
     largeFont.loadFont("selena.otf", 48);
     
@@ -13,7 +16,8 @@ void ofApp::setup(){
     presets.setup("alchemy", synth);
     midi.setup(synth);
     
-    synth->connectTo(tap).connectTo(output);
+    
+    synth->connectTo(filter).connectTo(tap).connectTo(output);
     output.start();
     playing = false;
     
@@ -64,6 +68,8 @@ void ofApp::exit() {
 void ofApp::keyPressed(int key){
     if (key == 'u') {
         alchemy.showUI();
+    } else if(key == 'f') {
+        filter.showUI();
     } else if(key == 's') {
         presets.save();
     } else if(key == 357) {

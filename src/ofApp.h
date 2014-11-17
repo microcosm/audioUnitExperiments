@@ -47,4 +47,6 @@ public:
     vector<Skeleton>* skeletons;
     Renderer1 renderer;
     ofTrueTypeFont smallFont, largeFont;
+    
+    ofxAudioUnit filter;
 };
