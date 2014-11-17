@@ -46,7 +46,8 @@ void ofApp::draw(){
     
     for(int i = 0; i < skeletons->size(); i++) {
         alchemy.setParameters(XyPad1x, XyPad1y, skeletons->at(i).getLeftHandNormal());
-        alchemy.setParameters(XyPad2x, XyPad2y, skeletons->at(i).getRightHandNormal());
+        alchemy.setParameter(RemixX, skeletons->at(i).getRightHandNormal().x * 0.34);
+        alchemy.setParameter(RemixY, skeletons->at(i).getRightHandNormal().y);
     }
     
     ofSetColor(ofColor::black);
