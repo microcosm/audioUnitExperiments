@@ -8,6 +8,7 @@
 #include "Controls.h"
 #include "ofxKinectV2OSC.h"
 #include "Renderer1.h"
+#include "AlchemyPlayer.h"
 
 class ofApp : public ofBaseApp{
     

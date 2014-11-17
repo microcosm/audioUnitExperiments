@@ -70,6 +70,7 @@
 		84830C9B1A198AB8002665D1 /* Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84830C8E1A198AB8002665D1 /* Parser.cpp */; };
 		84830C9C1A198AB8002665D1 /* BodyRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84830C911A198AB8002665D1 /* BodyRenderer.cpp */; };
 		84830C9D1A198AB8002665D1 /* ofxKinectV2OSC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84830C931A198AB8002665D1 /* ofxKinectV2OSC.cpp */; };
+		84CBD38F1A19987900084689 /* AlchemyPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CBD38D1A19987900084689 /* AlchemyPlayer.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -256,6 +257,8 @@
 		84830C921A198AB8002665D1 /* BodyRenderer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BodyRenderer.h; sourceTree = "<group>"; };
 		84830C931A198AB8002665D1 /* ofxKinectV2OSC.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxKinectV2OSC.cpp; sourceTree = "<group>"; };
 		84830C941A198AB8002665D1 /* ofxKinectV2OSC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxKinectV2OSC.h; sourceTree = "<group>"; };
+		84CBD38D1A19987900084689 /* AlchemyPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AlchemyPlayer.cpp; sourceTree = "<group>"; };
+		84CBD38E1A19987900084689 /* AlchemyPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlchemyPlayer.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -679,6 +682,15 @@
 			path = Draw;
 			sourceTree = "<group>";
 		};
+		84CBD38C1A19985800084689 /* Synths */ = {
+			isa = PBXGroup;
+			children = (
+				84CBD38D1A19987900084689 /* AlchemyPlayer.cpp */,
+				84CBD38E1A19987900084689 /* AlchemyPlayer.h */,
+			);
+			path = Synths;
+			sourceTree = "<group>";
+		};
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
@@ -754,6 +766,7 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				84CBD38C1A19985800084689 /* Synths */,
 				8444270F1A144963008A72A7 /* Renderers */,
 				846DADD71A102B0800317D00 /* Handlers */,
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
@@ -879,6 +892,7 @@
 				84830C9B1A198AB8002665D1 /* Parser.cpp in Sources */,
 				846DADBE1A1010E900317D00 /* ofxAudioUnitHardwareUtils.cpp in Sources */,
 				844426EF1A144842008A72A7 /* OscPrintReceivedElements.cpp in Sources */,
+				84CBD38F1A19987900084689 /* AlchemyPlayer.cpp in Sources */,
 				846DAD481A0FF68800317D00 /* ofxBpm.cpp in Sources */,
 				846DAD791A0FF68F00317D00 /* ofxRtMidiOut.cpp in Sources */,
 				846DAD7B1A0FF68F00317D00 /* ofxMidi.cpp in Sources */,

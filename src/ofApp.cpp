@@ -33,11 +33,6 @@ void ofApp::togglePlaying() {
     }
 }
 
-const int XyPad1x = 8;
-const int XyPad1y = 9;
-const int XyPad2x = 10;
-const int XyPad2y = 11;
-
 void ofApp::update(){
     tap.getLeftWaveform(waveform, ofGetWidth(), ofGetHeight());
     kinect.update();
@@ -48,20 +43,15 @@ void ofApp::draw(){
     waveform.draw();
     renderer.draw();
     
-    
-    
-    
     for(int i = 0; i < skeletons->size(); i++) {
         
         ofVec2f leftHand = skeletons->at(i).getLeftHandNormal();
         ofVec2f rightHand = skeletons->at(i).getRightHandNormal();
-        AudioUnitSetParameter(alchemySynth.getUnit(), XyPad1x, kAudioUnitScope_Global, 0, leftHand.x, 0);
-        AudioUnitSetParameter(alchemySynth.getUnit(), XyPad1y, kAudioUnitScope_Global, 0, leftHand.y, 0);
-        AudioUnitSetParameter(alchemySynth.getUnit(), XyPad2x, kAudioUnitScope_Global, 0, rightHand.x, 0);
-        AudioUnitSetParameter(alchemySynth.getUnit(), XyPad2y, kAudioUnitScope_Global, 0, rightHand.y, 0);
+        AudioUnitSetParameter(alchemySynth.getUnit(), AlchemyPlayer::XyPad1x, kAudioUnitScope_Global, 0, leftHand.x, 0);
+        AudioUnitSetParameter(alchemySynth.getUnit(), AlchemyPlayer::XyPad1y, kAudioUnitScope_Global, 0, leftHand.y, 0);
+        AudioUnitSetParameter(alchemySynth.getUnit(), AlchemyPlayer::XyPad2x, kAudioUnitScope_Global, 0, rightHand.x, 0);
+        AudioUnitSetParameter(alchemySynth.getUnit(), AlchemyPlayer::XyPad2y, kAudioUnitScope_Global, 0, rightHand.y, 0);
     }
-    
-    
     
     ofSetColor(ofColor::black);
     ofDrawBitmapString(midi.report(), 20, 34);
