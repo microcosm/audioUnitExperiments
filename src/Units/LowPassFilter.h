@@ -1,9 +1,9 @@
 #pragma once
 #include "ofMain.h"
 #include "ofxAudioUnit.h"
-#include "BaseAU.h"
+#include "BaseUnit.h"
 
-class LowPassFilter : public BaseAU {
+class LowPassFilter : public BaseUnit {
     
 public:
     void setup();

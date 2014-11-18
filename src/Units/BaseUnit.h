@@ -2,7 +2,7 @@
 #include "ofMain.h"
 #include "ofxAudioUnit.h"
 
-class BaseAU {
+class BaseUnit {
     
 public:
     virtual void setup();

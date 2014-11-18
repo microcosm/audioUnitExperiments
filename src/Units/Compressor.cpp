@@ -3,5 +3,5 @@
 void Compressor::setup() {
     unit = ofxAudioUnit(kAudioUnitType_Effect,
                         kAudioUnitSubType_DynamicsProcessor);
-    BaseAU::setup();
+    BaseUnit::setup();
 }

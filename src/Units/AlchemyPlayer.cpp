@@ -2,5 +2,5 @@
 
 void AlchemyPlayer::setup() {
     unit = ofxAudioUnit('aumu', 'CaC2', 'CamA');
-    BaseAU::setup();
+    BaseUnit::setup();
 }
