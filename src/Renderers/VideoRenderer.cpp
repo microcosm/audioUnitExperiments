@@ -11,13 +11,15 @@ void VideoRenderer::setup() {
 }
 
 void VideoRenderer::update() {
-    if(wait < 1) resetOpacity();
-    else wait--;
+    if(wait < 1) {
+        setNewOpacity();
+        setNewPosition();
+    } else wait--;
     
     video.update();
     
-    tx0 = ofMap(ofGetMouseX(), 0, ofGetWidth(), 0, 1);
-    ty0 = ofMap(ofGetMouseY(), 0, ofGetHeight(), 0, 1);
+    tx0 = ofMap(texturePosition.x, 0, ofGetWidth(), 0, 1);
+    ty0 = ofMap(texturePosition.y, 0, ofGetHeight(), 0, 1);
     tx1 = tx0 + 1;
     ty1 = ty0 + 1;
     plane.mapTexCoords(tx0, ty0, tx1, ty1);
@@ -38,7 +40,7 @@ void VideoRenderer::stop() {
     video.stop();
 }
 
-void VideoRenderer::resetOpacity() {
+void VideoRenderer::setNewOpacity() {
     float random = ofRandom(1);
     if(random < 0.6) {
         opacity = 100;
@@ -56,4 +58,9 @@ void VideoRenderer::resetOpacity() {
         opacity = 140;
         wait = (int)ofRandom(30, 60);
     }
+}
+
+void VideoRenderer::setNewPosition() {
+    texturePosition.x = (int)ofRandom(ofGetWidth());
+    texturePosition.y = (int)ofRandom(ofGetHeight());
 }
