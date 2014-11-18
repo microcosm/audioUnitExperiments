@@ -67,10 +67,10 @@ void ofApp::draw(){
         mixer.setInputVolume(val, 1);
         renderer.setOpacity(ofMap(val, 0, 0.2, 0, 255, true));
         
-        val = ofMap(skeleton->getLeftHandNormal().x, 0, 1, 0, 50);
-        leftChain.reverbDryWet(val);
-        val = ofMap(skeleton->getRightHandNormal().x, 0, 1, 50, 0);
-        rightChain.reverbDryWet(val);
+        val = ofMap(skeleton->getLeftHandNormal().x, 0, 1, 1, 0);
+        leftChain.alchemyRemixX(val);
+        val = ofMap(skeleton->getRightHandNormal().x, 0, 1, 0, 1);
+        rightChain.alchemyRemixX(val);
         
         val = ofMap(skeleton->getLeftHandNormal().y, 0, 1, 6900, 500);
         leftChain.filterCutoff(val);

@@ -76,6 +76,7 @@
 		8458D0821A1BADB9001D46EF /* Compressor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8458D0711A1BADB9001D46EF /* Compressor.cpp */; };
 		8458D0831A1BADB9001D46EF /* LowPassFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8458D0731A1BADB9001D46EF /* LowPassFilter.cpp */; };
 		8458D0841A1BADB9001D46EF /* Reverb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8458D0751A1BADB9001D46EF /* Reverb.cpp */; };
+		8458D08C1A1BD29E001D46EF /* Delay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8458D08A1A1BD29E001D46EF /* Delay.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -273,6 +274,8 @@
 		8458D0741A1BADB9001D46EF /* LowPassFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LowPassFilter.h; sourceTree = "<group>"; };
 		8458D0751A1BADB9001D46EF /* Reverb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Reverb.cpp; sourceTree = "<group>"; };
 		8458D0761A1BADB9001D46EF /* Reverb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reverb.h; sourceTree = "<group>"; };
+		8458D08A1A1BD29E001D46EF /* Delay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Delay.cpp; sourceTree = "<group>"; };
+		8458D08B1A1BD29E001D46EF /* Delay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Delay.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -688,6 +691,8 @@
 				8458D0741A1BADB9001D46EF /* LowPassFilter.h */,
 				8458D0751A1BADB9001D46EF /* Reverb.cpp */,
 				8458D0761A1BADB9001D46EF /* Reverb.h */,
+				8458D08A1A1BD29E001D46EF /* Delay.cpp */,
+				8458D08B1A1BD29E001D46EF /* Delay.h */,
 			);
 			path = Units;
 			sourceTree = "<group>";
@@ -908,6 +913,7 @@
 				8458D0191A1BAD94001D46EF /* ofxRtMidiOut.cpp in Sources */,
 				8458CFE51A1BAD90001D46EF /* Mapper.cpp in Sources */,
 				8458CFAD1A1BAD87001D46EF /* CAAUParameter.cpp in Sources */,
+				8458D08C1A1BD29E001D46EF /* Delay.cpp in Sources */,
 				8458CFB31A1BAD87001D46EF /* ofxAudioUnitFilePlayer.cpp in Sources */,
 				8458D07C1A1BADB9001D46EF /* main.cpp in Sources */,
 				8458CFE11A1BAD90001D46EF /* Interpreter.cpp in Sources */,
