@@ -5,6 +5,7 @@ void Renderer1::setup(vector<Skeleton>* _skeletons) {
     circleImage.loadImage("circle.png");
     allocate(&fbo1);
     allocate(&fbo2);
+    opacity = 0;
 }
 
 void Renderer1::draw() {
@@ -27,12 +28,16 @@ void Renderer1::draw() {
 
 void Renderer1::drawHand(Hand hand, Joint handJoint) {
     ofFill();
-    ofSetColor(ofColor::white);
+    ofSetColor(255, 255, 255, opacity);
     circleImage.draw(handJoint.getPoint());
 }
 
 void Renderer1::drawBone(Joint joint1, Joint joint2) {}
 void Renderer1::drawJoint(Joint joint) {}
+
+void Renderer1::setOpacity(float _opacity) {
+    opacity = _opacity;
+}
 
 void Renderer1::allocate(ofFbo *fbo) {
     fbo->allocate(ofGetWidth(), ofGetHeight(), GL_RGBA);

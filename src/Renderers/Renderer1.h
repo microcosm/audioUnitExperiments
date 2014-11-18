@@ -10,9 +10,11 @@ public:
 	void drawHand(Hand hand, Joint handJoint);
 	void drawBone(Joint joint1, Joint joint2);
 	void drawJoint(Joint joint);
+    void setOpacity(float _opacity);
 
 protected:
     void allocate(ofFbo *fbo);
     ofFbo fbo1, fbo2;
     ofImage circleImage;
+    float opacity;
 };

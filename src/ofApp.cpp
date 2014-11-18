@@ -65,6 +65,7 @@ void ofApp::draw(){
         val = ofMap(skeleton->getSpineShoulder().z(), 10, 18, 0, 1, true);
         mixer.setInputVolume(val, 0);
         mixer.setInputVolume(val, 1);
+        renderer.setOpacity(ofMap(val, 0, 0.2, 0, 255, true));
         
         val = ofMap(skeleton->getLeftHandNormal().x, 0, 1, 0, 50);
         leftChain.reverbDryWet(val);
