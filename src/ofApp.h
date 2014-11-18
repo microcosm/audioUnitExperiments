@@ -38,6 +38,7 @@ public:
     ofxAudioUnitMixer mixer;
     ofxAudioUnitOutput output;
     Controls controls;
+    ofVideoPlayer video;
     
     ofxKinectV2OSC kinect;
     Skeleton* skeleton;

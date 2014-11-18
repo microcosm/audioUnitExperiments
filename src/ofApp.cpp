@@ -1,9 +1,11 @@
 #include "ofApp.h"
 
 void ofApp::setup(){
-    
     smallFont.loadFont("selena.otf", 16); //http://openfontlibrary.org/en/font/selena
     largeFont.loadFont("selena.otf", 48);
+    
+    video.loadMovie("bad_reception.mov");
+    
     
     kinect.setup(12345, smallFont);
     skeletons = kinect.getSkeletons();
@@ -32,13 +34,17 @@ void ofApp::play(void){
 
 void ofApp::togglePlaying() {
     playing = !playing;
-    if(!playing) {
+    if(playing) {
+        video.play();
+    } else {
+        video.stop();
         leftChain.midiNoteOff();
         rightChain.midiNoteOff();
     }
 }
 
 void ofApp::update(){
+    video.update();
     leftChain.update();
     rightChain.update();
     kinect.update();
@@ -67,6 +73,9 @@ void ofApp::draw(){
     ofDrawBitmapString(rightChain.report(), 250, 30);
     ofDrawBitmapString(controls.report(), ofGetWidth() - 350, 30);
     largeFont.drawString("fps:\n" + ofToString(ofGetFrameRate()), 20, ofGetHeight() - 100);
+    
+    ofSetColor(ofColor::white);
+    video.draw(0, 0, ofGetWidth(), ofGetHeight());
 }
 
 void ofApp::exit() {
