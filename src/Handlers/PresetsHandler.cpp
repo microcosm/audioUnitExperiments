@@ -14,20 +14,16 @@ void PresetsHandler::setup(string synthName, ofxAudioUnit* synth){
 }
 
 void PresetsHandler::load(int index) {
-    string name = presets.at(index).getBaseName();
-    synth->loadCustomPreset(name);
-    updateMsg = "Loaded preset [" + ofToString(index) + "] " + name;
-    cout << updateMsg << endl;
+    string path = presets.at(index).getAbsolutePath();
+    synth->loadCustomPresetAtPath(path);
 }
 
 void PresetsHandler::save() {
-    string name = synthName + "-";
-    name.append(ofToString(ofGetUnixTime()));
-    synth->saveCustomPreset(name);
+    ofDirectory dir(synthName);
+    string name = "/preset-" + ofToString(ofGetUnixTime()) + ".aupreset";
+    synth->saveCustomPresetAtPath(dir.getAbsolutePath() + "/" + name);
     readFromDisk();
     currentPreset = presets.size()-1;
-    updateMsg = "Saved preset [" + ofToString(currentPreset) + "] " + name;
-    cout << updateMsg << endl;
 }
 
 void PresetsHandler::increment() {
@@ -45,7 +41,7 @@ void PresetsHandler::decrement() {
 }
 
 void PresetsHandler::readFromDisk() {
-    ofDirectory dir("");
+    ofDirectory dir(synthName);
     dir.allowExt("aupreset");
     dir.listDir();
     presets = dir.getFiles();
