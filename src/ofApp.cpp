@@ -76,23 +76,25 @@ void ofApp::exit() {
 
 void ofApp::keyPressed(int key){
     
+    AlchemyChain* selectedChain;
+    selectedChain = leftChain.isSelected() ? &leftChain : &rightChain;
     
     if (key == 'u') {
-        leftChain.showAlchemyUI();
+        selectedChain->showAlchemyUI();
     } else if(key == 'r') {
-        leftChain.showReverbUI();
+        selectedChain->showReverbUI();
     } else if(key == 'f') {
-        leftChain.showFilterUI();
+        selectedChain->showFilterUI();
     } else if(key == 's') {
-        leftChain.savePresets();
+        selectedChain->savePresets();
     } else if(key == ']') {
-        leftChain.incrementMidiNote();
+        selectedChain->incrementMidiNote();
     } else if(key == '[') {
-        leftChain.decrementMidiNote();
-    } else if(key == 357) {
-        leftChain.incrementPreset();
+        selectedChain->decrementMidiNote();
     } else if(key == 359) {
-        leftChain.decrementPreset();
+        selectedChain->incrementPreset();
+    } else if(key == 357) {
+        selectedChain->decrementPreset();
     } else if(key == ' ') {
         togglePlaying();
     } else if(key == 358 || key == 356) {

@@ -37,6 +37,10 @@ void BaseChain::decrementPreset() {
     presets.decrement();
 }
 
+bool BaseChain::isSelected() {
+    return selected;
+}
+
 void BaseChain::select() {
     selected = true;
     presets.select();

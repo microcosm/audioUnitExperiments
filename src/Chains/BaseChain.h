@@ -15,6 +15,7 @@ public:
     void savePresets();
     void incrementPreset();
     void decrementPreset();
+    bool isSelected();
     void select();
     void deselect();
     void toggleSelected();
