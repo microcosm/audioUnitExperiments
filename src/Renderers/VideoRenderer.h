@@ -10,8 +10,11 @@ public:
     void stop();
     
 protected:
+    void resetOpacity();
     ofVideoPlayer video;
     ofTexture texture;
     ofPlanePrimitive plane;
     float tx0, ty0, tx1, ty1;
+    int opacity, wait;
 };
+

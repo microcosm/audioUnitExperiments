@@ -7,9 +7,13 @@ void VideoRenderer::setup() {
     texture.setTextureWrap(GL_MIRRORED_REPEAT, GL_MIRRORED_REPEAT);
     plane.set(ofGetWidth(), ofGetHeight(), 2, 2);
     plane.setPosition(ofGetWidth() * 0.5, ofGetHeight() * 0.5, 0);
+    wait = 0;
 }
 
 void VideoRenderer::update() {
+    if(wait < 1) resetOpacity();
+    else wait--;
+    
     video.update();
     
     tx0 = ofMap(ofGetMouseX(), 0, ofGetWidth(), 0, 1);
@@ -20,6 +24,7 @@ void VideoRenderer::update() {
 }
 
 void VideoRenderer::draw() {
+    ofSetColor(255, 255, 255, opacity);
     texture.bind();
     plane.draw();
     texture.unbind();
@@ -31,4 +36,24 @@ void VideoRenderer::play() {
 
 void VideoRenderer::stop() {
     video.stop();
+}
+
+void VideoRenderer::resetOpacity() {
+    float random = ofRandom(1);
+    if(random < 0.6) {
+        opacity = 100;
+        wait = (int)ofRandom(30, 240);
+    } else if(random < 0.7) {
+        opacity = 255;
+        wait = (int)ofRandom(5, 15);
+    } else if(random < 0.8) {
+        opacity = 200;
+        wait = (int)ofRandom(10, 20);
+    } else if(random < 0.9) {
+        opacity = 170;
+        wait = (int)ofRandom(20, 40);
+    } else {
+        opacity = 140;
+        wait = (int)ofRandom(30, 60);
+    }
 }

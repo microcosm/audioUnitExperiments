@@ -49,7 +49,7 @@ void ofApp::update(){
 }
 
 void ofApp::draw(){
-    ofSetColor(ofColor::white);
+    ofBackground(0);
     video.draw();
     leftChain.draw();
     rightChain.draw();
