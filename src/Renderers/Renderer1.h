@@ -14,4 +14,5 @@ public:
 protected:
     void allocate(ofFbo *fbo);
     ofFbo fbo1, fbo2;
+    ofImage circleImage;
 };

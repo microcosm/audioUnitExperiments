@@ -2,11 +2,13 @@
 
 void Renderer1::setup(vector<Skeleton>* _skeletons) {
     BodyRenderer::setup(_skeletons);
+    circleImage.loadImage("circle.png");
     allocate(&fbo1);
     allocate(&fbo2);
 }
 
 void Renderer1::draw() {
+    ofEnableAlphaBlending();
     fbo1.begin();
     ofClear(0, 0, 0, 20);
     for(int i = 0; i < skeletons->size(); i++) {
@@ -20,12 +22,13 @@ void Renderer1::draw() {
     fbo2.end();
     
     fbo2.draw(0,0);
+    ofDisableAlphaBlending();
 }
 
 void Renderer1::drawHand(Hand hand, Joint handJoint) {
     ofFill();
     ofSetColor(ofColor::white);
-    ofCircle(handJoint.getPoint(), 100);
+    circleImage.draw(handJoint.getPoint());
 }
 
 void Renderer1::drawBone(Joint joint1, Joint joint2) {}
