@@ -3,10 +3,16 @@
 string Controls::report() {
     stringstream report;
     report << "CONTROLS" << endl
-    << endl << "LEFT/RIGHT: Switch presets"
-    << endl << "UP/DOWN:    Switch notes"
     << endl << "SPACE:      Start/stop playing"
-    << endl << "u:          Show UI"
+    << endl << "LEFT/RIGHT: Switch chain"
+    << endl << "            (all below controls"
+    << endl << "            contextual to this)"
+    << endl << "UP/DOWN:    Switch presets"
+    << endl << "[]          Switch notes"
+    << endl << "u:          Synth UI"
+    << endl << "r:          Reverb UI"
+    << endl << "f:          Filter UI"
+    << endl << "c:          Compressor UI"
     << endl << "s:          Save preset";
     return report.str();
 }
