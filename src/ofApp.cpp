@@ -58,6 +58,10 @@ void ofApp::draw(){
     if(kinect.hasSkeletons()) {
         skeleton = kinect.getNearestSkeleton();
         
+        val = ofMap(skeleton->getSpineShoulder().z(), 10, 18, 0, 1, true);
+        mixer.setInputVolume(val, 0);
+        mixer.setInputVolume(val, 1);
+        
         val = ofMap(skeleton->getLeftHandNormal().x, 0, 1, 0, 50);
         leftChain.reverbDryWet(val);
         val = ofMap(skeleton->getRightHandNormal().x, 0, 1, 50, 0);
