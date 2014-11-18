@@ -1,19 +1,14 @@
 #pragma once
 #include "ofMain.h"
-#include "ofxAudioUnit.h"
-#include "PresetsHandler.h"
+#include "BaseChain.h"
 #include "AlchemyPlayer.h"
 #include "LowPassFilter.h"
-#include "MidiHandler.h"
 #include "Reverb.h"
 
-class AlchemyChain {
+class AlchemyChain : public BaseChain {
     
 public:
     void setup(string name, ofxAudioUnitMixer* mixer, int mixerChannel);
-    void update();
-    void draw();
-    void exit();
     void reverbDryWet(float val);
     void filterCutoff(float val);
     void alchemyRemixX(float val);
@@ -21,21 +16,9 @@ public:
     void showAlchemyUI();
     void showFilterUI();
     void showReverbUI();
-    void savePresets();
-    void incrementPreset();
-    void decrementPreset();
-    void incrementMidiNote();
-    void decrementMidiNote();
-    void midiNoteOn();
-    void midiNoteOff();
     
 protected:
     AlchemyPlayer alchemy;
     LowPassFilter filter;
     Reverb reverb;
-    ofxAudioUnitTap tap;
-    ofPolyline waveform;
-    
-    PresetsHandler presets;
-    MidiHandler midi;
 };
