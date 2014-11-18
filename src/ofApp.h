@@ -16,13 +16,15 @@ public:
     void setup();
     void play();
     void togglePlaying();
+    void toggleDebugUI();
     void update();
     void draw();
+    void drawDebugBox(int x, int y, int w, int h);
     void exit();
     
     void keyPressed(int key);
     void keyReleased(int key);
-    void mouseMoved(int x, int y );
+    void mouseMoved(int x, int y);
     void mouseDragged(int x, int y, int button);
     void mousePressed(int x, int y, int button);
     void mouseReleased(int x, int y, int button);
@@ -30,7 +32,7 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
-    bool playing;
+    bool playing, showDebugUI;
     float val;
     
     AlchemyChain leftChain, rightChain;

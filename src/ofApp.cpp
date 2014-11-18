@@ -17,7 +17,7 @@ void ofApp::setup(){
     mixer.connectTo(*compressor.get()).connectTo(output);
     output.start();
     
-    playing = false;
+    playing = showDebugUI = false;
     
     ofAddListener(bpm.beatEvent, this, &ofApp::play);
     bpm.start();
@@ -39,6 +39,10 @@ void ofApp::togglePlaying() {
         leftChain.midiNoteOff();
         rightChain.midiNoteOff();
     }
+}
+
+void ofApp::toggleDebugUI() {
+    showDebugUI = !showDebugUI;
 }
 
 void ofApp::update(){
@@ -73,11 +77,26 @@ void ofApp::draw(){
         rightChain.filterCutoff(val);
     }
     
-    ofSetColor(ofColor::black);
-    ofDrawBitmapString(leftChain.report(), 24, 30);
-    ofDrawBitmapString(rightChain.report(), 250, 30);
-    ofDrawBitmapString(controls.report(), ofGetWidth() - 350, 30);
-    largeFont.drawString("fps:\n" + ofToString(ofGetFrameRate()), 20, ofGetHeight() - 100);
+    if(showDebugUI) {
+        drawDebugBox(10, 10, 420, 300);
+        drawDebugBox(ofGetWidth() - 370, 10, 300, 230);
+        drawDebugBox(10, ofGetHeight() - 160, 210, 150);
+        
+        ofSetColor(ofColor::black);
+        ofDrawBitmapString(leftChain.report(), 24, 30);
+        ofDrawBitmapString(rightChain.report(), 250, 30);
+        ofDrawBitmapString(controls.report(), ofGetWidth() - 350, 30);
+        largeFont.drawString("fps:\n" + ofToString(ofGetFrameRate()), 20, ofGetHeight() - 100);
+    }
+}
+
+void ofApp::drawDebugBox(int x, int y, int w, int h) {
+    ofSetColor(255, 255, 255, 128);
+    ofFill();
+    ofRect(x, y, w, h);
+    ofSetColor(0);
+    ofNoFill();
+    ofRect(x, y, w, h);
 }
 
 void ofApp::exit() {
@@ -96,6 +115,8 @@ void ofApp::keyPressed(int key){
         selectedChain->showReverbUI();
     } else if(key == 'f') {
         selectedChain->showFilterUI();
+    } else if(key == 'd') {
+        toggleDebugUI();
     } else if(key == 's') {
         selectedChain->savePresets();
     } else if(key == ']') {

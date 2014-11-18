@@ -4,6 +4,7 @@ string Controls::report() {
     stringstream report;
     report << "CONTROLS" << endl
     << endl << "SPACE:      Start/stop playing"
+    << endl << "d:          Debug / preset UI"
     << endl << "LEFT/RIGHT: Switch chain"
     << endl << "            (all below controls"
     << endl << "            contextual to this)"
