@@ -76,6 +76,9 @@ void ofApp::draw(){
         leftChain.filterCutoff(val);
         val = ofMap(skeleton->getRightHandNormal().y, 0, 1, 6900, 500);
         rightChain.filterCutoff(val);
+    } else {
+        mixer.setInputVolume(0, 0);
+        mixer.setInputVolume(0, 1);
     }
     
     if(showDebugUI) {
