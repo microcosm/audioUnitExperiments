@@ -12,5 +12,6 @@ public:
 	void drawJoint(Joint joint);
 
 protected:
-    ofFbo fbo;
+    void allocate(ofFbo *fbo);
+    ofFbo fbo1, fbo2;
 };
