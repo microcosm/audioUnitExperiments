@@ -75,6 +75,7 @@
 		84CA90E11A1AF8220042222E /* Compressor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CA90DF1A1AF8220042222E /* Compressor.cpp */; };
 		84CA90E41A1B04D00042222E /* BaseUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CA90E21A1B04D00042222E /* BaseUnit.cpp */; };
 		84CA90E71A1B05DE0042222E /* BaseChain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CA90E51A1B05DE0042222E /* BaseChain.cpp */; };
+		84CA90EA1A1B21610042222E /* VideoRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CA90E81A1B21610042222E /* VideoRenderer.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -270,6 +271,8 @@
 		84CA90E31A1B04D00042222E /* BaseUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUnit.h; sourceTree = "<group>"; };
 		84CA90E51A1B05DE0042222E /* BaseChain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BaseChain.cpp; sourceTree = "<group>"; };
 		84CA90E61A1B05DE0042222E /* BaseChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseChain.h; sourceTree = "<group>"; };
+		84CA90E81A1B21610042222E /* VideoRenderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VideoRenderer.cpp; sourceTree = "<group>"; };
+		84CA90E91A1B21610042222E /* VideoRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRenderer.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -666,6 +669,8 @@
 			children = (
 				84CA90C61A1AEB530042222E /* Renderer1.cpp */,
 				84CA90C71A1AEB530042222E /* Renderer1.h */,
+				84CA90E81A1B21610042222E /* VideoRenderer.cpp */,
+				84CA90E91A1B21610042222E /* VideoRenderer.h */,
 			);
 			path = Renderers;
 			sourceTree = "<group>";
@@ -898,6 +903,7 @@
 				84CA90431A1AEB130042222E /* Skeleton.cpp in Sources */,
 				84CA90E71A1B05DE0042222E /* BaseChain.cpp in Sources */,
 				84CA90141A1AEB0C0042222E /* ofxAudioUnitHardwareUtils.cpp in Sources */,
+				84CA90EA1A1B21610042222E /* VideoRenderer.cpp in Sources */,
 				84CA90121A1AEB0C0042222E /* ofxAudioUnitFftNode.cpp in Sources */,
 				84CA90791A1AEB180042222E /* ofxRtMidiOut.cpp in Sources */,
 				84CA90451A1AEB130042222E /* Mapper.cpp in Sources */,

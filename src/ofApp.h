@@ -6,6 +6,7 @@
 #include "ofxAudioUnit.h"
 #include "ofxKinectV2OSC.h"
 #include "Renderer1.h"
+#include "VideoRenderer.h"
 #include "Compressor.h"
 #include "AlchemyChain.h"
 
@@ -38,7 +39,7 @@ public:
     ofxAudioUnitMixer mixer;
     ofxAudioUnitOutput output;
     Controls controls;
-    ofVideoPlayer video;
+    VideoRenderer video;
     
     ofxKinectV2OSC kinect;
     Skeleton* skeleton;
