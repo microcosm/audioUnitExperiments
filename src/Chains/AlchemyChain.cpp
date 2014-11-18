@@ -1,7 +1,7 @@
 #include "AlchemyChain.h"
 
-void AlchemyChain::setup(string name, ofxAudioUnitMixer* mixer, int mixerChannel){
-    BaseChain::setup(name, mixer, mixerChannel);
+void AlchemyChain::setup(string name, ofxAudioUnitMixer* mixer, int mixerChannel, ofColor _waveColor){
+    BaseChain::setup(name, mixer, mixerChannel, _waveColor);
     
     alchemy.setup();
     filter.setup();

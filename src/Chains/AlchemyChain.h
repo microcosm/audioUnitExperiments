@@ -8,7 +8,7 @@
 class AlchemyChain : public BaseChain {
     
 public:
-    void setup(string name, ofxAudioUnitMixer* mixer, int mixerChannel);
+    void setup(string name, ofxAudioUnitMixer* mixer, int mixerChannel, ofColor _waveColor);
     void reverbDryWet(float val);
     void filterCutoff(float val);
     void alchemyRemixX(float val);

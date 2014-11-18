@@ -7,7 +7,7 @@
 class BaseChain {
     
 public:
-    virtual void setup(string name, ofxAudioUnitMixer* mixer, int mixerChannel);
+    virtual void setup(string name, ofxAudioUnitMixer* mixer, int mixerChannel, ofColor _waveColor);
     virtual void update();
     virtual void draw();
     virtual void exit();
@@ -30,5 +30,6 @@ protected:
     
     PresetsHandler presets;
     MidiHandler midi;
+    ofColor waveColor;
     bool selected;
 };

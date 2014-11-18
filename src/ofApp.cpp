@@ -10,8 +10,8 @@ void ofApp::setup(){
     video.setup();
     
     mixer.setInputBusCount(2);
-    leftChain.setup("left-chain", &mixer, 0);
-    rightChain.setup("right-chain", &mixer, 1);
+    leftChain.setup("left-chain", &mixer, 0, ofColor::lightGray);
+    rightChain.setup("right-chain", &mixer, 1, ofColor::white);
     leftChain.select();
     compressor.setup();
     mixer.connectTo(*compressor.get()).connectTo(output);

@@ -1,6 +1,7 @@
 #include "BaseChain.h"
 
-void BaseChain::setup(string name, ofxAudioUnitMixer* mixer, int mixerChannel){
+void BaseChain::setup(string name, ofxAudioUnitMixer* mixer, int mixerChannel, ofColor _waveColor){
+    waveColor = _waveColor;
     selected = false;
 }
 
@@ -9,7 +10,7 @@ void BaseChain::update(){
 }
 
 void BaseChain::draw(){
-    ofSetColor(ofColor::white);
+    ofSetColor(waveColor);
     ofSetLineWidth(1);
     waveform.draw();
 }
