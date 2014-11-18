@@ -34,7 +34,7 @@ public:
     
     bool playing, showDebugUI;
     float val;
-    
+
     AlchemyChain leftChain, rightChain;
     ofxBpm bpm;
     Compressor compressor;

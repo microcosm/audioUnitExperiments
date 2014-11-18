@@ -1,6 +1,8 @@
 #include "ofApp.h"
 
 void ofApp::setup(){
+    ofToggleFullscreen();
+    playing = showDebugUI = false;
     smallFont.loadFont("selena.otf", 16); //http://openfontlibrary.org/en/font/selena
     largeFont.loadFont("selena.otf", 48);
     
@@ -16,8 +18,6 @@ void ofApp::setup(){
     compressor.setup();
     mixer.connectTo(*compressor.get()).connectTo(output);
     output.start();
-    
-    playing = showDebugUI = false;
     
     ofAddListener(bpm.beatEvent, this, &ofApp::play);
     bpm.start();
@@ -132,6 +132,8 @@ void ofApp::keyPressed(int key){
     } else if(key == 358 || key == 356) {
         leftChain.toggleSelected();
         rightChain.toggleSelected();
+    } else if(key == 13) {
+        ofToggleFullscreen();
     }
 }
 
