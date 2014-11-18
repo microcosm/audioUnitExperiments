@@ -55,15 +55,17 @@ void ofApp::draw(){
     rightChain.draw();
     renderer.draw();
     
-    for(int i = 0; i < skeletons->size(); i++) {
-        val = ofMap(skeletons->at(i).getLeftHandNormal().x, 0, 1, 0, 50);
+    if(kinect.hasSkeletons()) {
+        skeleton = kinect.getNearestSkeleton();
+        
+        val = ofMap(skeleton->getLeftHandNormal().x, 0, 1, 0, 50);
         leftChain.reverbDryWet(val);
-        val = ofMap(skeletons->at(i).getRightHandNormal().x, 0, 1, 50, 0);
+        val = ofMap(skeleton->getRightHandNormal().x, 0, 1, 50, 0);
         rightChain.reverbDryWet(val);
         
-        val = ofMap(skeletons->at(i).getLeftHandNormal().y, 0, 1, 6900, 500);
+        val = ofMap(skeleton->getLeftHandNormal().y, 0, 1, 6900, 500);
         leftChain.filterCutoff(val);
-        val = ofMap(skeletons->at(i).getRightHandNormal().y, 0, 1, 6900, 500);
+        val = ofMap(skeleton->getRightHandNormal().y, 0, 1, 6900, 500);
         rightChain.filterCutoff(val);
     }
     
