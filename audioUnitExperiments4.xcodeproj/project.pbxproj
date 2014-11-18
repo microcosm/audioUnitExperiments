@@ -73,6 +73,7 @@
 		84CA90D91A1AEB530042222E /* BaseAU.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CA90CB1A1AEB530042222E /* BaseAU.cpp */; };
 		84CA90DA1A1AEB530042222E /* LowPassFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CA90CD1A1AEB530042222E /* LowPassFilter.cpp */; };
 		84CA90DB1A1AEB530042222E /* Reverb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CA90CF1A1AEB530042222E /* Reverb.cpp */; };
+		84CA90E11A1AF8220042222E /* Compressor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 84CA90DF1A1AF8220042222E /* Compressor.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -264,6 +265,8 @@
 		84CA90CE1A1AEB530042222E /* LowPassFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LowPassFilter.h; sourceTree = "<group>"; };
 		84CA90CF1A1AEB530042222E /* Reverb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Reverb.cpp; sourceTree = "<group>"; };
 		84CA90D01A1AEB530042222E /* Reverb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reverb.h; sourceTree = "<group>"; };
+		84CA90DF1A1AF8220042222E /* Compressor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Compressor.cpp; sourceTree = "<group>"; };
+		84CA90E01A1AF8220042222E /* Compressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compressor.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -669,6 +672,8 @@
 				84CA90CA1A1AEB530042222E /* AlchemyPlayer.h */,
 				84CA90CB1A1AEB530042222E /* BaseAU.cpp */,
 				84CA90CC1A1AEB530042222E /* BaseAU.h */,
+				84CA90DF1A1AF8220042222E /* Compressor.cpp */,
+				84CA90E01A1AF8220042222E /* Compressor.h */,
 				84CA90CD1A1AEB530042222E /* LowPassFilter.cpp */,
 				84CA90CE1A1AEB530042222E /* LowPassFilter.h */,
 				84CA90CF1A1AEB530042222E /* Reverb.cpp */,
@@ -909,6 +914,7 @@
 				84CA90421A1AEB130042222E /* Joint.cpp in Sources */,
 				84CA90171A1AEB0C0042222E /* ofxAudioUnitMidi.cpp in Sources */,
 				84CA90D11A1AEB530042222E /* AlchemyChain.cpp in Sources */,
+				84CA90E11A1AF8220042222E /* Compressor.cpp in Sources */,
 				84CA90D51A1AEB530042222E /* main.cpp in Sources */,
 				84CA90D71A1AEB530042222E /* Renderer1.cpp in Sources */,
 				84CA907C1A1AEB180042222E /* ofxMidiIn.cpp in Sources */,

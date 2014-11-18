@@ -9,8 +9,12 @@ void ofApp::setup(){
     skeletons = kinect.getSkeletons();
     renderer.setup(skeletons);
     
-    leftChain.setup("left-chain");
-    rightChain.setup("right-chain");
+    mixer.setInputBusCount(2);
+    leftChain.setup("left-chain", &mixer, 0);
+    rightChain.setup("right-chain", &mixer, 1);
+    compressor.setup();
+    mixer.connectTo(*compressor.get()).connectTo(output);
+    output.start();
     
     playing = false;
     
@@ -79,7 +83,7 @@ void ofApp::keyPressed(int key){
     } else if(key == 357) {
         leftChain.incrementMidiNote();
     } else if(key == 359) {
-        rightChain.incrementMidiNote();
+        leftChain.incrementMidiNote();
     } else if(key == ' ') {
         togglePlaying();
     } else if(key == 358) {

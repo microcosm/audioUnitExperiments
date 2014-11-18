@@ -1,9 +1,8 @@
 #include "MidiHandler.h"
 
-void MidiHandler::setup(ofxAudioUnit* synth){
+void MidiHandler::setup(ofxAudioUnit* synth, string midiPortId){
     this->synth = synth;
     
-    midiPortId = "openFrameworksPatch";
     channel = 1;
     velocity = 64;
     note = 60;

@@ -1,16 +1,12 @@
 #pragma once
 
 #include "ofMain.h"
-#include "ofxAudioUnit.h"
 #include "ofxBpm.h"
-#include "PresetsHandler.h"
-#include "MidiHandler.h"
 #include "Controls.h"
+#include "ofxAudioUnit.h"
 #include "ofxKinectV2OSC.h"
 #include "Renderer1.h"
-#include "AlchemyPlayer.h"
-#include "LowPassFilter.h"
-#include "Reverb.h"
+#include "Compressor.h"
 #include "AlchemyChain.h"
 
 class ofApp : public ofBaseApp{
@@ -37,17 +33,10 @@ public:
     float val;
     
     AlchemyChain leftChain, rightChain;
-    
-    AlchemyPlayer alchemy;
-    LowPassFilter filter;
-    Reverb reverb;
-    ofxAudioUnitTap tap;
-    ofxAudioUnitOutput output;
-    ofPolyline waveform;
     ofxBpm bpm;
-    
-    PresetsHandler presets;
-    MidiHandler midi;
+    Compressor compressor;
+    ofxAudioUnitMixer mixer;
+    ofxAudioUnitOutput output;
     Controls controls;
     
     ofxKinectV2OSC kinect;

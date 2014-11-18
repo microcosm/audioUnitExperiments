@@ -10,7 +10,7 @@
 class AlchemyChain {
     
 public:
-    void setup(string name);
+    void setup(string name, ofxAudioUnitMixer* mixer, int mixerChannel);
     void update();
     void draw();
     void exit();
@@ -34,7 +34,6 @@ protected:
     LowPassFilter filter;
     Reverb reverb;
     ofxAudioUnitTap tap;
-    ofxAudioUnitOutput output;
     ofPolyline waveform;
     
     PresetsHandler presets;

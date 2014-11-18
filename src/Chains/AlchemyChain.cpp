@@ -1,18 +1,18 @@
 #include "AlchemyChain.h"
 
-void AlchemyChain::setup(string name){
+void AlchemyChain::setup(string name, ofxAudioUnitMixer* mixer, int mixerChannel){
     alchemy.setup();
     filter.setup();
     reverb.setup();
     
     ofxAudioUnit* synth = alchemy.get();
     presets.setup(name, synth);
-    midi.setup(synth);
+    midi.setup(synth, name);
     
     synth->connectTo(*filter.get())
       .connectTo(*reverb.get())
       .connectTo(tap)
-      .connectTo(output);
+      .connectTo(*mixer, mixerChannel);
 }
 
 void AlchemyChain::update(){
