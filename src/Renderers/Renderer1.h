@@ -5,10 +5,12 @@
 
 class Renderer1: public BodyRenderer {
 public:
-    virtual void draw();
-	virtual void drawHand(Hand hand, Joint handJoint);
-	virtual void drawBone(Joint joint1, Joint joint2);
-	virtual void drawJoint(Joint joint);
+    void setup(vector<Skeleton>* _skeletons);
+    void draw();
+	void drawHand(Hand hand, Joint handJoint);
+	void drawBone(Joint joint1, Joint joint2);
+	void drawJoint(Joint joint);
 
 protected:
+    ofFbo fbo;
 };
