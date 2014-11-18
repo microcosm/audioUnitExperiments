@@ -4,6 +4,7 @@ void PresetsHandler::setup(string synthName, ofxAudioUnit* synth){
     this->synthName = synthName;
     this->synth = synth;
     
+    selected = false;
     currentPreset = -1;
     this->readFromDisk();
     
@@ -40,6 +41,14 @@ void PresetsHandler::decrement() {
     load(currentPreset);
 }
 
+void PresetsHandler::select() {
+    selected = true;
+}
+
+void PresetsHandler::deselect() {
+    selected = false;
+}
+
 void PresetsHandler::readFromDisk() {
     ofDirectory dir(synthName);
     dir.allowExt("aupreset");
@@ -55,13 +64,14 @@ int PresetsHandler::currentIndex(){
 }
 
 string PresetsHandler::report() {
+    string icon = selected ? "[*]" : " * ";
     stringstream report;
     report << "PRESETS" << endl;
     
     for(int i = 0; i < presets.size(); i++) {
         report << endl << i << ": " << presets.at(i).getBaseName();
         if(i == currentIndex()) {
-            report << " [*]";
+            report << " " << icon;
         }
     }
     

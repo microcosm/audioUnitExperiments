@@ -15,6 +15,9 @@ public:
     void savePresets();
     void incrementPreset();
     void decrementPreset();
+    void select();
+    void deselect();
+    void toggleSelected();
     void incrementMidiNote();
     void decrementMidiNote();
     void midiNoteOn();
@@ -26,4 +29,5 @@ protected:
     
     PresetsHandler presets;
     MidiHandler midi;
+    bool selected;
 };

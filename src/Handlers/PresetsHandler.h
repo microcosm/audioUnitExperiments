@@ -10,6 +10,8 @@ public:
     void save();
     void increment();
     void decrement();
+    void select();
+    void deselect();
     void readFromDisk();
     int currentIndex();
     string report();
@@ -20,5 +22,5 @@ protected:
     string synthName;
     vector<ofFile> presets;
     int currentPreset;
-    string updateMsg;
+    bool selected;
 };

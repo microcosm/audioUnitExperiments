@@ -12,6 +12,7 @@ void ofApp::setup(){
     mixer.setInputBusCount(2);
     leftChain.setup("left-chain", &mixer, 0);
     rightChain.setup("right-chain", &mixer, 1);
+    leftChain.select();
     compressor.setup();
     mixer.connectTo(*compressor.get()).connectTo(output);
     output.start();
@@ -74,6 +75,8 @@ void ofApp::exit() {
 }
 
 void ofApp::keyPressed(int key){
+    
+    
     if (key == 'u') {
         leftChain.showAlchemyUI();
     } else if(key == 'r') {
@@ -82,16 +85,19 @@ void ofApp::keyPressed(int key){
         leftChain.showFilterUI();
     } else if(key == 's') {
         leftChain.savePresets();
+    } else if(key == ']') {
+        leftChain.incrementMidiNote();
+    } else if(key == '[') {
+        leftChain.decrementMidiNote();
     } else if(key == 357) {
-        leftChain.incrementMidiNote();
+        leftChain.incrementPreset();
     } else if(key == 359) {
-        leftChain.incrementMidiNote();
+        leftChain.decrementPreset();
     } else if(key == ' ') {
         togglePlaying();
-    } else if(key == 358) {
-        leftChain.incrementPreset();
-    } else if(key == 356) {
-        leftChain.decrementPreset();
+    } else if(key == 358 || key == 356) {
+        leftChain.toggleSelected();
+        rightChain.toggleSelected();
     }
 }
 

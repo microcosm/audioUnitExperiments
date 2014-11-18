@@ -1,6 +1,8 @@
 #include "BaseChain.h"
 
-void BaseChain::setup(string name, ofxAudioUnitMixer* mixer, int mixerChannel){}
+void BaseChain::setup(string name, ofxAudioUnitMixer* mixer, int mixerChannel){
+    selected = false;
+}
 
 void BaseChain::update(){
     tap.getLeftWaveform(waveform, ofGetWidth(), ofGetHeight());
@@ -33,6 +35,21 @@ void BaseChain::incrementPreset() {
 
 void BaseChain::decrementPreset() {
     presets.decrement();
+}
+
+void BaseChain::select() {
+    selected = true;
+    presets.select();
+}
+
+void BaseChain::deselect() {
+    selected = false;
+    presets.deselect();
+}
+
+void BaseChain::toggleSelected() {
+    selected = !selected;
+    selected ? presets.select() : presets.deselect();
 }
 
 void BaseChain::incrementMidiNote() {
