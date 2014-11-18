@@ -10,6 +10,7 @@ void BaseChain::update(){
 
 void BaseChain::draw(){
     ofSetColor(ofColor::white);
+    ofSetLineWidth(1);
     waveform.draw();
 }
 
