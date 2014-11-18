@@ -11,6 +11,7 @@
 #include "AlchemyPlayer.h"
 #include "LowPassFilter.h"
 #include "Reverb.h"
+#include "AlchemyChain.h"
 
 class ofApp : public ofBaseApp{
     
@@ -33,6 +34,9 @@ public:
     void gotMessage(ofMessage msg);
     
     bool playing;
+    float val;
+    
+    AlchemyChain leftChain, rightChain;
     
     AlchemyPlayer alchemy;
     LowPassFilter filter;
