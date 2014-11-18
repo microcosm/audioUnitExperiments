@@ -11,6 +11,7 @@ public:
     virtual void update();
     virtual void draw();
     virtual void exit();
+    virtual string report();
     void savePresets();
     void incrementPreset();
     void decrementPreset();

@@ -9,13 +9,18 @@ void BaseChain::update(){
 void BaseChain::draw(){
     ofSetColor(ofColor::white);
     waveform.draw();
-    ofSetColor(ofColor::black);
-    ofDrawBitmapString(midi.report(), 20, 34);
-    ofDrawBitmapString(presets.report(), 500, 34);
 }
 
 void BaseChain::exit() {
     midi.exit();
+}
+
+string BaseChain::report() {
+    string report = "";
+    report.append(midi.report());
+    report.append("\n\n");
+    report.append(presets.report());
+    return report;
 }
 
 void BaseChain::savePresets() {

@@ -56,7 +56,7 @@ int PresetsHandler::currentIndex(){
 
 string PresetsHandler::report() {
     stringstream report;
-    report << "PRESETS" << endl << endl;
+    report << "PRESETS" << endl;
     
     for(int i = 0; i < presets.size(); i++) {
         report << endl << i << ": " << presets.at(i).getBaseName();

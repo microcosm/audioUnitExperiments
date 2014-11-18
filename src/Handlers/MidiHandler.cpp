@@ -23,12 +23,12 @@ void MidiHandler::sendNoteOff() {
 string MidiHandler::report() {
     stringstream report;
     report << "MIDI" << endl << endl
-    << "connected to port " << midiOut.getPort()
+    << "port " << midiOut.getPort()
     << " \"" << midiOut.getName() << "\"" << endl
-    << "is virtual?: " << midiOut.isVirtual() << endl << endl
-    << "sending to channel " << channel << endl << endl
-    << "note: " << note << endl
-    << "velocity: " << velocity << endl;
+    << "virtual? " << midiOut.isVirtual() << endl
+    << "channel " << channel << endl
+    << "note " << note << endl
+    << "velocity " << velocity << endl;
     return report.str();
 }
 

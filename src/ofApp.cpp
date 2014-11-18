@@ -62,7 +62,9 @@ void ofApp::draw(){
     }
     
     ofSetColor(ofColor::black);
-    ofDrawBitmapString(controls.report(), 500, 600);
+    ofDrawBitmapString(leftChain.report(), 24, 30);
+    ofDrawBitmapString(rightChain.report(), 250, 30);
+    ofDrawBitmapString(controls.report(), ofGetWidth() - 350, 30);
     largeFont.drawString("fps:\n" + ofToString(ofGetFrameRate()), 20, ofGetHeight() - 100);
 }
 
