@@ -7,6 +7,7 @@ void ofApp::setup(){
     largeFont.loadFont("selena.otf", 48);
     
     kinect.setup(12345, smallFont);
+    kinect.setSmoothing(SIMPLE_MOVING_AVERAGE);
     skeletons = kinect.getSkeletons();
     renderer.setup(skeletons);
     video.setup();
