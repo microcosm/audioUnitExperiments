@@ -29,7 +29,9 @@ void Renderer1::draw() {
 void Renderer1::drawHand(Hand hand, Joint handJoint) {
     ofFill();
     ofSetColor(255, 255, 255, opacity);
+    ofSetRectMode(OF_RECTMODE_CENTER);
     circleImage.draw(handJoint.getPoint());
+    ofSetRectMode(OF_RECTMODE_CORNER);
 }
 
 void Renderer1::drawBone(Joint joint1, Joint joint2) {}
